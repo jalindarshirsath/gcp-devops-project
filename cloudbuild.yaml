@@ -1,23 +1,24 @@
 service_account: gcp-devops-pro@hackathon-worldline.iam.gserviceaccount.com
 #service_account: sa-wl-main@glb-ms-wgh-app-dev.iam.gserviceaccount.com
-#europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio
+
+#us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj
 steps:
 # Step-1 create image 
-- name: 'europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio/cloud-builders/docker'
-  args: ['build', '-t', 'europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio/ms-3-51-flask', '.']
+- name: 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/cloud-builders/docker'
+  args: ['build', '-t', 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/ms-3-51-flask', '.']
 # Step-2 upload image in Artifactory
-- name: 'europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio/cloud-builders/docker'
-  args: ['push', 'europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio/ms-3-51-flask']
+- name: 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/cloud-builders/docker'
+  args: ['push', 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/ms-3-51-flask']
 
 # Step 3: Deploy to Cloud Run
-- name: 'europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio/google.com/cloudsdktool/cloud-sdk'
+- name: 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
   args: 
   - 'run'
   - 'deploy'
   - 'ms-3-51-flask'  # Change this to your Cloud Run service name
   - '--image'
-  - 'europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio/ms-3-51-flask'
+  - 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/ms-3-51-flask'
   - '--region'
   - 'europe-west3'  # Change to your region
   - '--platform'
