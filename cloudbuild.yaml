@@ -1,7 +1,7 @@
 service_account: gcp-devops-pro@hackathon-worldline.iam.gserviceaccount.com
 #service_account: sa-wl-main@glb-ms-wgh-app-dev.iam.gserviceaccount.com
-
 #us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj
+
 steps:
 # Step-1 create image 
 - name: 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/cloud-builders/docker'
