@@ -4,10 +4,10 @@ service_account: gcp-devops-pro@hackathon-worldline.iam.gserviceaccount.com
 
 steps:
 # Step-1 create image 
-- name: 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/cloud-builders/docker'
+- name: 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/docker'
   args: ['build', '-t', 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/ms-3-51-flask', '.']
 # Step-2 upload image in Artifactory
-- name: 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/cloud-builders/docker'
+- name: 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/docker'
   args: ['push', 'us-docker.pkg.dev/hackathon-worldline/gcp-devops-proj/ms-3-51-flask']
 
 # Step 3: Deploy to Cloud Run
