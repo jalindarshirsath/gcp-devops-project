@@ -2,7 +2,7 @@ service_account: gcp-devops-pro@hackathon-worldline.iam.gserviceaccount.com
 #service_account: sa-wl-main@glb-ms-wgh-app-dev.iam.gserviceaccount.com
 #europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio
 steps:
-# Step-1 create image
+# Step-1 create image 
 - name: 'europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio/cloud-builders/docker'
   args: ['build', '-t', 'europe-west3-docker.pkg.dev/hackathon-worldline/eugcrio/ms-3-51-flask', '.']
 # Step-2 upload image in Artifactory
